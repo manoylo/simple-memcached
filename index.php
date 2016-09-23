@@ -6,11 +6,8 @@
  * Time: 2:48 PM
  */
 
-define('MEMCACHED_HOST', '134.168.59.218');
-define('MEMCACHED_PORT', '11211');
-$memcache = new Memcache;
-$cacheAvailable = $memcache->connect(MEMCACHED_HOST, MEMCACHED_PORT);
+$m = new Memcached();
+$m->addServer('134.168.59.218', 11211);
 
-echo "Memcached connected ? ";
-
-var_dump($cacheAvailable);
+$m->set('int', 99);
+var_dump($m->get('int'));
