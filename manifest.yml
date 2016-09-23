@@ -1,0 +1,9 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: eu-gb.mybluemix.net
+  name: simple-memcached
+  host: simple-memcached
+  disk_quota: 1024M
+  buildpack: https://github.com/cloudfoundry/php-buildpack#v3.2.2
